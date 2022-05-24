@@ -1,2 +1,3 @@
-# NodeJS
- Estudando conceitos sobre Node.JS
+# Aprimorando-Conhecimentos :mag_right:
+
+### Repositório criado para estudos em Node.JS.  :heavy_check_mark:
