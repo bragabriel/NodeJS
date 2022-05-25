@@ -1,5 +1,6 @@
 // NPM  ->  Maior repositório de pacotes que existe
 // Express  ->  Framework utilizado para criar aplicações back-end usando Node.JS
+// também é bastante orientado à Rotas
 
 /*
 No terminal:
