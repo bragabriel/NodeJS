@@ -13,12 +13,12 @@ app.get("/", function(req, res){
 });
 
 //criando uma segunda rota: /sobre
-app.get("/", function(req, res){
+app.get("/sobre", function(req, res){
     res.send("Minha pagina 'sobre'")
 });
 
 //criando uma terceira rota: /blog
-app.get("/", function(req, res){
+app.get("/blog", function(req, res){
     res.send("Bem-vindo ao meu blog!")
 });
 
