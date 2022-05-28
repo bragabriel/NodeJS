@@ -9,18 +9,28 @@ const app = express();
 
 //criando uma rota principal
 app.get("/", function(req, res){
-    res.send("Seja bem-vindo ao meu app!"); //enviar
+
+    //envia arquivo
+    res.sendFile(__dirname + "/pages/index.html") 
+//              __dirname = retorna o diretório raiz da aplicação (vai até o app.js) + /pages/index.html
 });
+
 
 //criando uma segunda rota: /sobre
 app.get("/sobre", function(req, res){
-    res.send("Minha pagina 'sobre'")
+
+    //envia msg
+    res.sendFile(__dirname + "/pages/sobre.html"); 
 });
+
 
 //criando uma terceira rota: /blog
 app.get("/blog", function(req, res){
+
+    //envia msg
     res.send("Bem-vindo ao meu blog!")
 });
+
 
 //criando uma quarta rota para utilizar o 'Parâmetro'
 app.get('/ola/:cargo/:nome/:cor', function(req, res){
