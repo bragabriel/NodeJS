@@ -22,6 +22,10 @@ app.get("/blog", function(req, res){
     res.send("Bem-vindo ao meu blog!")
 });
 
+
+
+
+
 //abrindo um servidor usando express:
 
 //primeiro executa o app.listen 8081
