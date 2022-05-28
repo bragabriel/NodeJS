@@ -22,7 +22,17 @@ app.get("/blog", function(req, res){
     res.send("Bem-vindo ao meu blog!")
 });
 
+//criando uma quarta rota para utilizar o 'Parâmetro'
+app.get('/ola/:cargo/:nome/:cor', function(req, res){
+//       /rota :parametro
+    
 
+    //res.send(req.params);
+    //      req = responsável por receber dados de uma requisição
+
+    //Só podemos usar uma vez o send na página
+    res.send("<h1>Ola " + req.params.nome + "</h1>"+"<h2>Seu cargo eh: " + req.params.cargo + "</h2>"+"<h2>Sua cor eh: " + req.params.cor + "</h2>");
+})
 
 
 
