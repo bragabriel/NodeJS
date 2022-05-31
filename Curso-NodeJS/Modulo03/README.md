@@ -11,7 +11,8 @@
 * Handlebars;
 
 <br>
-Npm utilizado: <br>
-- npm install --save sequelize <br>
-- npm install --save mysql2 <br>
-- npm install --save express-handlebars
+Npm's utilizados: <br>
+> npm install --save sequelize <br>
+> npm install --save mysql2 <br>
+> npm install --save express-handlebars<br>
+> npm install --save body-parser<br>

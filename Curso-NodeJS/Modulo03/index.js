@@ -8,6 +8,8 @@ const app = express();
 const handlebars = require('express-handlebars');
 //carregando o módulo handlebars do express para a variável handlebars
 
+const bodyParser = require('body-parser');
+
 const Sequelize = require('sequelize');
 
 
@@ -19,6 +21,11 @@ const Sequelize = require('sequelize');
     //usando o handlebars como a nossa template-engine
     app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));//main: template padrão dessa aplicação
     app.set('view engine', 'handlebars');
+
+
+    /* Body Parser */
+    app.use(bodyParser.urlencoded({extended: false}))
+    app.use(bodyParser.json())
 
 
     /* Conexão com o DB */
