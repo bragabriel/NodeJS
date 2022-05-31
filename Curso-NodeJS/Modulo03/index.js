@@ -32,9 +32,12 @@ const Sequelize = require('sequelize');
 /* Rotas */
     app.get('/cad', function(req, res){
         //res.send('Rota de Cadastro de Posts');
-        res.render('formulario')
+        res.render('formulario')//renderizando a pag formulario.handlebars
     })
 
+    app.post('/add', function(req, res){
+        res.send('Sucesso!')
+    }) //essa rota só é acessada com a requisição feita com POST
 
 /* Server */
     // - Primeiro executa o app.listen 8081
