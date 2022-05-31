@@ -1,4 +1,4 @@
-const express = require("express"); 
+const express = require('express'); 
 //carregando o módulo express para a variável express
 
 const app = express(); 
@@ -17,7 +17,7 @@ const Sequelize = require('sequelize');
     /* Template Engine */
 
     //usando o handlebars como a nossa template-engine
-    app.engine('handlebars', handlebars({defaultLayout: 'main'})); //main: template padrão dessa aplicação
+    app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));//main: template padrão dessa aplicação
     app.set('view engine', 'handlebars');
 
 
@@ -27,6 +27,13 @@ const Sequelize = require('sequelize');
         host: "localhost",
         dialect: 'mysql'  //tipo de db que queremos nos conectar
     });
+
+
+/* Rotas */
+    app.get('/cad', function(req, res){
+        //res.send('Rota de Cadastro de Posts');
+        res.render('formulario')
+    })
 
 
 /* Server */
