@@ -10,9 +10,14 @@
 * Models no Sequelize;
 * Handlebars;
 
-<br>
-Npm's utilizados: <br>
+
+
+#### Npm's utilizados: <br>
 > npm install --save sequelize <br>
 > npm install --save mysql2 <br>
 > npm install --save express-handlebars<br>
 > npm install --save body-parser<br>
+
+
+#### Acesso ao mysql pelo CMD: <br>
+> mysql -h localhost -u root -p

@@ -10,7 +10,7 @@ const handlebars = require('express-handlebars');
 
 const bodyParser = require('body-parser');
 
-const Sequelize = require('sequelize');
+
 
 
 
@@ -28,12 +28,6 @@ const Sequelize = require('sequelize');
     app.use(bodyParser.json())
 
 
-    /* Conexão com o DB */
-    const sequelize = new Sequelize('dbteste', 'root', '1234', {
-        //                           db,      user,   senha,  {host -> Onde está rodando}
-        host: "localhost",
-        dialect: 'mysql'  //tipo de db que queremos nos conectar
-    });
 
 
 /* Rotas */
