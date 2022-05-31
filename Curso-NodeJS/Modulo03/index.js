@@ -43,7 +43,8 @@ const Sequelize = require('sequelize');
     })
 
     app.post('/add', function(req, res){
-        res.send('Sucesso!')
+        req.body.conteudo //recebendo o conteúdo/input do formuario
+        res.send('Texto: '+ req.body.titulo + " <br> Conteudo: " + req.body.conteudo) //exibindo o conteudo
     }) //essa rota só é acessada com a requisição feita com POST
 
 /* Server */
