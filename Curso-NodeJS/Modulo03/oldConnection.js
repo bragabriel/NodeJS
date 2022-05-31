@@ -1,3 +1,4 @@
+/*
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('dbteste', 'root', '1234', {
@@ -30,7 +31,7 @@ const Postagem = sequelize.define('postagens', {
 });
 
 //Gerando o MODEL no mysql
-/* Postagem.sync({force: true}); */
+ Postagem.sync({force: true}); 
 
 //Inserindo mais dados em Postagem
 Postagem.create({
@@ -56,7 +57,7 @@ const Usuario = sequelize.define('usuarios', {
 })
 
 //Gerando o MODEL no mysql
-/* Usuario.sync({force: true}); */
+ Usuario.sync({force: true});
 
 Usuario.create({
     nome: "Gabriel",
@@ -72,4 +73,6 @@ Conferindo os dados no mysql prompt:
 > show tables;
 > describe postagens;
 > describe usuarios
+ 
+
 */
