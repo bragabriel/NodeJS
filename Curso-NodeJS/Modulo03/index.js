@@ -47,11 +47,11 @@ const Post = require('./models/Post'); //recebendo o models de Post
         res.render('formulario')//renderizando a pag formulario.handlebars
     })
 
-    app.post('/add', function(req, res){
-        Post.create({
+    app.post('/add', function(req, res){ 
+        Post.create({ //Adicionando Post no DB
             titulo: req.body.titulo,
             conteudo: req.body.conteudo
-        }).then(function(){//if success
+        }).then(function(){ //if success
             res.redirect('/')
             //res.send("Post criado com sucesso!")
         }).catch(function(erro){//if error
@@ -59,6 +59,13 @@ const Post = require('./models/Post'); //recebendo o models de Post
         })
     }) //essa rota só é acessada com a requisição feita com POST
 
+    app.get('/deletar/:id', function(req, res){ 
+        Post.destroy({where: {'id': req.params.id}}).then(function(){ //Deletando Post do DB
+            res.send("Postagem deletada com sucesso!")
+        }).catch(function(erro){
+            res.send("Esta postagem não existe!")
+        })
+    })
 
 /* Server */
     // - Primeiro executa o app.listen 8081
