@@ -10,8 +10,7 @@ const handlebars = require('express-handlebars');
 
 const bodyParser = require('body-parser');
 
-
-
+const Post = require('./models/Post'); //recebendo o models de Post
 
 
 /* Config */
@@ -19,7 +18,14 @@ const bodyParser = require('body-parser');
     /* Template Engine */
 
     //usando o handlebars como a nossa template-engine
-    app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));//main: template padrão dessa aplicação
+    app.engine('handlebars', handlebars.engine({
+        defaultLayout: 'main', //main: template padrão dessa aplicação
+        runtimeOptions: {
+            allowProtoPropertiesByDefault: true,
+            allowProtoMethodsByDefault: true,
+        }
+    }));
+
     app.set('view engine', 'handlebars');
 
 
@@ -28,18 +34,31 @@ const bodyParser = require('body-parser');
     app.use(bodyParser.json())
 
 
-
-
 /* Rotas */
+    app.get('/', function(req, res){
+        //pegando todos os posts em Ordem Decrescente
+        Post.findAll({order: [['id', 'DESC']]}).then(function(posts){
+            res.render('home', {posts: posts}) //passando variaveis para o handlebars 
+        })
+    })
+
     app.get('/cad', function(req, res){
         //res.send('Rota de Cadastro de Posts');
         res.render('formulario')//renderizando a pag formulario.handlebars
     })
 
     app.post('/add', function(req, res){
-        req.body.conteudo //recebendo o conteúdo/input do formuario
-        res.send('Texto: '+ req.body.titulo + " <br> Conteudo: " + req.body.conteudo) //exibindo o conteudo
+        Post.create({
+            titulo: req.body.titulo,
+            conteudo: req.body.conteudo
+        }).then(function(){//if success
+            res.redirect('/')
+            //res.send("Post criado com sucesso!")
+        }).catch(function(erro){//if error
+            res.send("Houve um erro: " + erro)
+        })
     }) //essa rota só é acessada com a requisição feita com POST
+
 
 /* Server */
     // - Primeiro executa o app.listen 8081

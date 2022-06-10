@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 /* Conexão com o DB */
-const sequelize = new Sequelize('postapp', 'root', '1234', {
+const sequelize = new Sequelize('test', 'root', '1234', {
     //                           db,      user,   senha,  {host -> Onde está rodando}
     host: "localhost",
     dialect: 'mysql' //tipo de db que queremos nos conectar
