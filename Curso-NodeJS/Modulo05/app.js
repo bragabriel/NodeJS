@@ -3,7 +3,8 @@
     const handlebars = require('express-handlebars');
     const bodyParser = require('body-parser');
     const app = express();
-    const admin = require('./routes/admin');
+    const admin = require('./routes/admin'); //importando as rotas de routes/admin.js
+    const path = require('path') //módulo padrão do Node para trabalhar com diretórios e pastas
     //const mongoose = require('mongoose');
 
 
@@ -19,7 +20,8 @@
 
     //Mongoose
 
-    //
+    //Public
+    app.use(express.static(path.join(__dirname, 'public')))//falando para o express que a pasta com os arquivos staticos é a pasta public
 
 /* Rotas */
     //prefixo /admin, rotas importadas do admin.js
