@@ -4,7 +4,8 @@
     const bodyParser = require('body-parser');
     const app = express();
     const admin = require('./routes/admin'); //importando as rotas de routes/admin.js
-    const path = require('path') //módulo padrão do Node para trabalhar com diretórios e pastas
+    const path = require('path'); //módulo padrão do Node para trabalhar com diretórios e pastas
+const { default: mongoose } = require('mongoose');
     //const mongoose = require('mongoose');
 
 
@@ -19,6 +20,13 @@
         app.set('view engine', 'handlebars')
 
     //Mongoose
+        mongoose.Promise = global.Promise; //evitando alguns erros de configuração
+
+        mongoose.connect('mongodb://localhost/blogapp').then(() => {
+            console.log("Conectado ao MongoDB com sucesso!");
+        }).catch((err) => {
+            console.log("Erro ao se conectar com o banco: " + err)
+        })
 
     //Public
     app.use(express.static(path.join(__dirname, 'public')))//falando para o express que a pasta com os arquivos staticos é a pasta public
