@@ -7,12 +7,15 @@
 
 #### Foi utilizado:
 * Express;
+* Mongoose;
+* Handlebars;
+* Body-Parser;
 
-#### Npm's utilizados: <br>
-> npm install --save sequelize <br>
-> npm install --save mysql2 <br>
+#### Dependencias utilizadas: <br>
+> npm install --save express<br>
 > npm install --save express-handlebars<br>
 > npm install --save body-parser<br>
+> npm install --save mongoose<br>
 
 #### Acesso ao mysql pelo CMD: <br>
 > mysql -h localhost -u root -p
