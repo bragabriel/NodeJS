@@ -11,7 +11,8 @@
     * Mongoose;
     * Handlebars;
     * Body-Parser;
-    * Middleware;<br><br>
+    * Middleware;
+    * Sessions<br><br>
 
 * Outros conceitos:
     * Bootstrap;<br><br>
