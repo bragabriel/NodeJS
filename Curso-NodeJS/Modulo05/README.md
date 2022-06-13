@@ -6,10 +6,14 @@
 <br> 
 
 #### Foi utilizado:
-* Express;
-* Mongoose;
-* Handlebars;
-* Body-Parser;
+* Conceitos de Node.JS:
+    * Express;
+    * Mongoose;
+    * Handlebars;
+    * Body-Parser;<br><br>
+
+* Outros conceitos:
+    * Bootstrap;<br><br>
 
 #### Dependencias utilizadas: <br>
 > npm install --save express<br>
