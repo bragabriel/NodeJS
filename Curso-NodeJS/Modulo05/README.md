@@ -6,11 +6,12 @@
 <br> 
 
 #### Foi utilizado:
-* Conceitos de Node.JS:
+* Conceitos Node.JS:
     * Express;
     * Mongoose;
     * Handlebars;
-    * Body-Parser;<br><br>
+    * Body-Parser;
+    * Middleware;<br><br>
 
 * Outros conceitos:
     * Bootstrap;<br><br>
@@ -20,6 +21,15 @@
 > npm install --save express-handlebars<br>
 > npm install --save body-parser<br>
 > npm install --save mongoose<br>
+> npm install --save express-session<br>
+> npm install --save connect-flash<br>
 
-#### Acesso ao mysql pelo CMD: <br>
-> mysql -h localhost -u root -p
+#### Acesso ao MongoDB pelo CMD: <br>
+> mongo
+> show databases;
+> use {nome_database};
+> show collections;
+> 
+
+#### Iniciando o MongoDB: <br>
+> mongod
