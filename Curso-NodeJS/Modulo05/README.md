@@ -12,7 +12,8 @@
     * Handlebars;
     * Body-Parser;
     * Middleware;
-    * Sessions<br><br>
+    * Sessions;
+    * Criptografia;<br><br>
 
 * Outros conceitos:
     * Bootstrap;<br><br>
@@ -24,6 +25,7 @@
 > npm install --save mongoose<br>
 > npm install --save express-session<br>
 > npm install --save connect-flash<br>
+> npm install --save bcryptjs<br>
 
 #### Acesso ao MongoDB pelo CMD: <br>
 > mongo
