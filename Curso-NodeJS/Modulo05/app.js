@@ -12,6 +12,7 @@
     const Postagem = mongoose.model("postagens");
     require("./models/Categoria");
     const Categoria = mongoose.model("categorias");
+    const usuarios = require("./routes/usuario")
 
 
 /* Configurações */
@@ -125,6 +126,9 @@
 
     //prefixo /admin, rotas importadas do admin.js
     app.use('/admin', admin)
+
+    //prefixo /usuarios, rotas importadas do usuarios.js
+    app.use('/usuarios', usuarios)
 
 
 /* Servidor */
