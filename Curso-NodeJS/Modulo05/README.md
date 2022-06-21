@@ -13,7 +13,8 @@
     * Body-Parser;
     * Middleware;
     * Sessions;
-    * Criptografia;<br><br>
+    * Criptografia;
+    * Controle de acesso.<br><br>
 
 * Outros conceitos:
     * Bootstrap;<br><br>
@@ -26,6 +27,8 @@
 > npm install --save express-session<br>
 > npm install --save connect-flash<br>
 > npm install --save bcryptjs<br>
+> npm install --save passport<br>
+> npm install --save passport-local<br>
 
 #### Acesso ao MongoDB pelo CMD: <br>
 > mongo

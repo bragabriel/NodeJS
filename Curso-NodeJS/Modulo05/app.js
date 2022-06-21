@@ -13,6 +13,8 @@
     require("./models/Categoria");
     const Categoria = mongoose.model("categorias");
     const usuarios = require("./routes/usuario")
+    const passport = require("passport");
+    require("./config/auth")(passport);
 
 
 /* Configurações */
@@ -23,12 +25,15 @@
             saveUninitialized: true
         }))
 
+        app.use(passport.initialize())
+        app.use(passport.session())
         app.use(flash())
 
     //Middleware
         app.use(function(req, res, next){
             res.locals.success_msg = req.flash("success_msg") //variável global armazenando 'sucesso'
             res.locals.error_msg = req.flash("error_msg") //variável global armazenando 'error'
+            res.locals.error = req.flash("error")
             next()
         })
 
