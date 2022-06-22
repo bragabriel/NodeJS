@@ -34,6 +34,7 @@
             res.locals.success_msg = req.flash("success_msg") //variável global armazenando 'sucesso'
             res.locals.error_msg = req.flash("error_msg") //variável global armazenando 'error'
             res.locals.error = req.flash("error")
+            res.locals.user = req.user || null //variavel 'user' vai armazenar os dados do usuario logado
             next()
         })
 
@@ -120,7 +121,7 @@
             }
         }).catch((err) => {
              console.log(err)
-            req.flash("error_msg", "Houve um erro interno ao carregar a página dessa categoria")
+            req.flash('error_msg', "Houve um erro interno ao carregar a página dessa categoria")
             res.redirect("/")
         })
     })
